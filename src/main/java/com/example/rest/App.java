@@ -39,20 +39,45 @@ public class App {
         app.run(args);
  
         System.out.println("Server started");
-
-         runGetRequest();
-
-        
-        runDatabaseQuery();
+        for (int i = 0; i <10;i++) {
+         
+         runGetRequest(i);
+        }
+        runGetRequest();
+        //runDatabaseQuery();
     }
  
     /**
      * Performs a simple GET request and prints the result to the log.
      */
-    private static void runGetRequest() {
+    private static void runGetRequest(int i) {
  
     	// sample URL
-        String url = "http://129.157.179.180:3000/reactorCore/320/650/green/linnbottern";
+        String url = "http://129.157.179.180:3000/fighters/45/"+i+"/green/linnbottern";
+        CloseableHttpResponse response = null;
+ 
+        try {
+            CloseableHttpClient httpclient = HttpClients.createDefault();
+            HttpGet httpGet = new HttpGet(url);
+            response = httpclient.execute(httpGet);
+            String content = EntityUtils.toString(response.getEntity());
+            System.out.println("Server response: " + content);
+        } catch (IOException e) {
+            System.out.println(e);
+        } finally {
+            try {
+                if (response != null) {
+                    response.close();
+                }
+            } catch (IOException ie) {
+                System.out.println(ie);
+            }
+        }    
+    }
+     private static void runGetRequest() {
+ 
+    	// sample URL
+        String url = "http://129.157.179.180:3000/shield/33/45/green/linnbottern";
         CloseableHttpResponse response = null;
  
         try {
