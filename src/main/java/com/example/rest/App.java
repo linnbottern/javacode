@@ -44,7 +44,7 @@ public class App {
          runGetRequest(i);
         }
         
-        //runDatabaseQuery();
+        runDatabaseQuery();
     }
  
     /**
