@@ -39,18 +39,21 @@ public class App {
         app.run(args);
  
         System.out.println("Server started");
- 
-        runGetRequest();
+        for (int i = 0; i <10;i++) {
+         
+         runGetRequest(i);
+        }
+        
         //runDatabaseQuery();
     }
  
     /**
      * Performs a simple GET request and prints the result to the log.
      */
-    private static void runGetRequest() {
+    private static void runGetRequest(int i) {
  
     	// sample URL
-        String url = "http://129.157.179.180:3000/shield/33/45/green/linnbottern";
+        String url = "http://129.157.179.180:3000/fighters/45/"+i+"/green/linnbottern";
         CloseableHttpResponse response = null;
  
         try {
@@ -76,10 +79,10 @@ public class App {
      * Performs a call to the database.
      */
     private static void runDatabaseQuery() {
-        String host = "myHost";
-        String database = "myDatabase";
-        String user = "myUsername";
-        String password = "myPassword";
+        String host = "129.157.179.180";
+        String database = "deathstar";
+        String user = "Captain";
+        String password = "welcome1";
         DBConnection db = new DBConnection("jdbc:mysql://" 
                 + host + "/" 
                 + database + "?user=" 
