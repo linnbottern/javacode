@@ -3,7 +3,7 @@ build:
   steps:
     - script:
         name: Maven install
-        code: mvn install
+        code: mvn install -DargLine="--add-modules java.xml.bind"
     - script:
         name: CD Target Directory
         code: |
