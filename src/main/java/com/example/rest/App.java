@@ -39,10 +39,9 @@ public class App {
         app.run(args);
  
         System.out.println("Server started");
-        for (int i = 0; i <10;i++) {
-         
-         runGetRequest(i);
-        }
+
+         runGetRequest();
+
         
         runDatabaseQuery();
     }
@@ -50,10 +49,10 @@ public class App {
     /**
      * Performs a simple GET request and prints the result to the log.
      */
-    private static void runGetRequest(int i) {
+    private static void runGetRequest() {
  
     	// sample URL
-        String url = "http://129.157.179.180:3000/fighters/45/"+i+"/green/linnbottern";
+        String url = "http://129.157.179.180:3000/reactorCore/320/650/green/linnbottern";
         CloseableHttpResponse response = null;
  
         try {
