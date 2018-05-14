@@ -1,8 +1,8 @@
 {
     "runtime": {
-        "majorVersion": "9"
+        "majorVersion": "8"
     },
-    "command": "java -jar java.xml.bind XwingApp-1.0.jar",
+    "command": "java -jar XwingApp-1.0.jar",
     "release": {
     },
     "notes": ""
